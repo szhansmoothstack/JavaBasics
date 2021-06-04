@@ -8,6 +8,12 @@ import java.util.Scanner;
 
 public class Assignment3 {
 
+    /**
+     * Method to count the occurrences of a character in a file
+     * @param fileName the path to the file
+     * @param c the char to be searched for
+     * @return the number of occurrences
+     */
     private static Integer countAppearances (String fileName, char c){
         int count = 0;
 

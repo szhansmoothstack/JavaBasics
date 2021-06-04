@@ -3,6 +3,7 @@ package com.ss.jb.three;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Assignment1 {
 
@@ -48,7 +49,9 @@ public class Assignment1 {
 
     public static void main (String[] args){
         //Directory will be the first argument
-        String strDir = args[0];
+        Scanner scanner = new Scanner (System.in);
+        System.out.println("Enter path of directory you wish to list");
+        String strDir = scanner.next();
         //List to store the content of the directory
         List<String> dirContent = new ArrayList<>();
 
