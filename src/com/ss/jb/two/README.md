@@ -10,4 +10,4 @@ maximum element of the array and its index.
 
 Assignment 3:
 Creates the 3 shapes that implement the Shape interface and calls the display method which in turn
-calls the calculateArea methods
+calls the calculateArea method. The dimensions of the shapes can be customized in the main method.
