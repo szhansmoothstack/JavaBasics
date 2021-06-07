@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Assignment2 {
 
+    //method to add o or e to the numbers based on odd or even
+    //returns the resulting string
     private static String oddOrEven(List<Integer> nums) {
         StringBuilder sb = new StringBuilder();
         nums.forEach(integer -> {
@@ -19,7 +21,7 @@ public class Assignment2 {
 
     public static void main(String[] args) {
         List<Integer> nums = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             nums.add(i);
         }
         System.out.println(oddOrEven(nums));

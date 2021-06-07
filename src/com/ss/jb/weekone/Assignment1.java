@@ -1,5 +1,10 @@
 package com.ss.jb.weekone;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 public class Assignment1 {
 
     interface PerformOperation {
@@ -32,15 +37,21 @@ public class Assignment1 {
         }
     }
 
-    public static void main(String[] args){
-        System.out.println("is 3 odd: " + executeOp.op (isOdd(), 3));
-        System.out.println("is 6 odd: " + executeOp.op (isOdd(), 6));
+    public static void main(String[] args) throws IOException {
 
-        System.out.println("is 5 prime: " + executeOp.op (isPrime(), 5));
-        System.out.println("is 9 prime: " + executeOp.op (isPrime(), 9));
-
-        System.out.println("is 125521 a palindrome: " + executeOp.op (isPalindrome(), 125521));
-        System.out.println("is 125522 a palindrome: " + executeOp.op (isPalindrome(), 125522));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int input = Integer.parseInt(reader.readLine());
+        String output = "";
+        while (input --> 0){
+            String line = reader.readLine().trim();
+            StringTokenizer tokenizer = new StringTokenizer(line);
+            int op = Integer.parseInt(tokenizer.nextToken());
+            int num = Integer.parseInt(tokenizer.nextToken());
+            if (op == 1) output = executeOp.op (isOdd(), num)? "ODD":"EVEN";
+            else if (op == 2) output = executeOp.op (isPrime(), num)? "PRIME":"COMPOSITE";
+            else if (op == 3) output = executeOp.op (isPalindrome(), num)? "PALINDROME":"NOT PALINDROME";
+            System.out.println(output);
+        }
     }
 
 }

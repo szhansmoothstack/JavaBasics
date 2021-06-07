@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 public class Assignment3 {
 
+    //Method to search for strings with 3 letters that start with a
     private static List<String> searchA3(List<String> strs) {
         return strs.stream().filter(s -> s.startsWith("a"))
                 .filter(s -> s.length() == 3)

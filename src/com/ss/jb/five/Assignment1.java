@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class Assignment1 {
+    //Static helper method to sort by letter e
     static class Utils {
         static int sortByE(String s1, String s2) {
             if (s1.contains("e") && !s2.contains("e")) return -1;
@@ -24,10 +25,14 @@ public class Assignment1 {
         Arrays.sort(strings, Comparator.comparingInt(c -> c.charAt(0)));
         System.out.println("Sorted by first letter:" + Arrays.toString(strings));
 
-        //Arrays.sort (strings, Comparator.comparingInt(c -> c.contains("e") ? 0: 1));
-        Arrays.sort(strings, Utils::sortByE);
+        Arrays.sort (strings, Comparator.comparingInt(c -> c.contains("e") ? 0: 1));
         System.out.println("Sorted by letter e:" + Arrays.toString(strings));
 
+        strings = new String[]{"12345", "abcdefg", "a", "tes", "54321"};
+        System.out.println("Reset to Original List:" + Arrays.toString(strings));
+
+        Arrays.sort(strings, Utils::sortByE);
+        System.out.println("Sorted by letter e with static helper:" + Arrays.toString(strings));
 
     }
 }
