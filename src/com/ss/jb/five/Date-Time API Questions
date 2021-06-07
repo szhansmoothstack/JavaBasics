@@ -1,0 +1,7 @@
+1. LocalDateTime class would work well. ZoneDateTime class might be good for different time zones. These classes
+both track time down to the nanosecond.
+2. Using a TemporalAdjustor, the previous method can then be used to find the previous date
+3. Both of these classes track offsets from UTC time, but ZoneOffset only tracks absolute offset from UTC while
+ZoneID can also find how the offset changes due to time of year or region.
+4. Instant to a ZonedDateTime: use the ZonedDateTime.ofInstant method
+    ZonedDateTime to Instant: use the Instant.atZone method
