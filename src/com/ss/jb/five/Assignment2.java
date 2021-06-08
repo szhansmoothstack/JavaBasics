@@ -18,12 +18,9 @@ public class Assignment2 {
         return sb.toString();
     }
 
-
-    public static void main(String[] args) {
-        List<Integer> nums = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            nums.add(i);
+    public static class Assignment2TestHook {
+        public String oddOrEven (List<Integer> nums){
+            return Assignment2.oddOrEven(nums);
         }
-        System.out.println(oddOrEven(nums));
     }
 }

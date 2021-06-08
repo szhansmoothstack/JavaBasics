@@ -14,8 +14,9 @@ public class Assignment3 {
                 .collect(Collectors.toList());
     }
 
-    public static void main(String[] args) {
-        List<String> str = Arrays.asList("Hello", "Testing", "abc", "tre", "arc", "atv", "his");
-        System.out.println(searchA3(str));
+    public static class Assignment3TestHook {
+        public List<String> searchA3 (List<String> strs){
+            return Assignment3.searchA3(strs);
+        }
     }
 }
