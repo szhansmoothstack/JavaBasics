@@ -1,5 +1,7 @@
 package com.ss.jb.five;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.time.*;
 import java.time.temporal.*;
 import java.util.Locale;
@@ -52,11 +54,34 @@ public class Assignment5To7 {
         }
     }
 
-    public static void main (String[] args){
-        printMonthLength(2016);
+    public static class Assignment5To7TestHook{
+        private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        private final PrintStream printStream = new PrintStream(outputStream);
+        private final PrintStream old = System.out;
 
-        printMondays("june");
+        private void resetStreamOut (){
+            System.out.flush();
+            System.setOut(old);
+        }
 
-        System.out.println(fridayTheThirteenth("august", 13));
+        public String printMonthLength (int year){
+            System.setOut (printStream);
+            Assignment5To7.printMonthLength(year);
+            String result = outputStream.toString();
+            resetStreamOut();
+            return result;
+        }
+
+        public String printMondays (String month){
+            System.setOut(printStream);
+            Assignment5To7.printMondays(month);
+            String result = outputStream.toString();
+            resetStreamOut();
+            return result;
+        }
+
+        public boolean fridayTheThirteenth (String m, int day){
+            return Assignment5To7.fridayTheThirteenth(m, day);
+        }
     }
 }
