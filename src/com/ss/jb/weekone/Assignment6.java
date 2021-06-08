@@ -18,6 +18,7 @@ public class Assignment6 {
         }
 
         private SampleSingleton(){
+
         }
 
         public static SampleSingleton getInstance() {

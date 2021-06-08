@@ -10,12 +10,9 @@ public class Assignment3 {
         return nums;
     }
 
-    public static void main(String[] args){
-        List<Integer> list1 = Arrays.asList(1, 2, 3);
-        List<Integer> list2 = Arrays.asList(6, 8, 6, 8, -1);
-        List<Integer> list3 = Collections.emptyList();
-        System.out.println(doubling(list1));
-        System.out.println(doubling(list2));
-        System.out.println(doubling(list3));
+    public static class Assignment3TestHook {
+        public List<Integer> doubling (List<Integer> nums){
+            return Assignment3.doubling(nums);
+        }
     }
 }

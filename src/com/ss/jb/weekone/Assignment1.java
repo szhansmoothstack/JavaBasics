@@ -11,7 +11,7 @@ public class Assignment1 {
         boolean operate(int num);
     }
 
-    private static PerformOperation isOdd() {
+    static PerformOperation isOdd() {
         //return a -> (a % 2 != 0) ? true : false;
         return x -> x % 2 != 0;
     }
@@ -51,6 +51,20 @@ public class Assignment1 {
             else if (op == 2) output = executeOp.op (isPrime(), num)? "PRIME":"COMPOSITE";
             else if (op == 3) output = executeOp.op (isPalindrome(), num)? "PALINDROME":"NOT PALINDROME";
             System.out.println(output);
+        }
+    }
+
+    public static class Assignment1TestHook{
+        public boolean isOdd(int num){
+            return executeOp.op(Assignment1.isOdd(), num);
+        }
+
+        public boolean isPrime(int num){
+            return executeOp.op(Assignment1.isPrime(), num);
+        }
+
+        public boolean isPalindrome (int num){
+            return executeOp.op(Assignment1.isPalindrome(), num);
         }
     }
 

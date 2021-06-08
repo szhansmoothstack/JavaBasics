@@ -19,12 +19,9 @@ public class Assignment5 {
         return groupSumClump(i, nums, target);
     }
 
-    public static void main(String[] args){
-        int[] nums1 = {2, 4, 8};
-        int[] nums2 = {1, 2, 4, 8, 1};
-        int[] nums3 = {2, 4, 4, 8};
-        System.out.println(groupSumClump(0, nums1, 10));
-        System.out.println(groupSumClump(0, nums2, 14));
-        System.out.println(groupSumClump(0, nums3, 14));
+    public static class Assignment5TestHook {
+        public boolean groupSumClump (int start, int[] nums, int target){
+            return Assignment5.groupSumClump(start, nums, target);
+        }
     }
 }
